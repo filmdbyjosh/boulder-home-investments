@@ -30,10 +30,14 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
-  height: 100%;
-  overflow: hidden;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -41,7 +45,7 @@ body {
   font-size: 15px;
   line-height: 1.5;
   color: var(--text);
-  background: var(--bg);
+  background: var(--navy-deep);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -53,9 +57,13 @@ img {
 
 /* Layout */
 .page {
-  height: 100vh;
-  height: 100dvh;
   position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem 22vh;
   background:
     radial-gradient(ellipse 90% 70% at 50% 35%, rgba(55, 110, 165, 0.22) 0%, transparent 55%),
     radial-gradient(ellipse 60% 50% at 80% 10%, rgba(70, 130, 190, 0.12) 0%, transparent 50%),
@@ -79,16 +87,15 @@ img {
   pointer-events: none;
 }
 
-/* Wizard area */
 .wizard {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem 1.25rem 2.5rem;
-  min-height: 100%;
-  position: relative;
-  z-index: 1;
+  width: 100%;
+  flex: 0 0 auto;
 }
 
 .wizard__header {
@@ -465,11 +472,15 @@ img {
   flex-shrink: 0;
 }
 
-.wizard__legal {
-  margin-top: 1.25rem;
+.page__legal {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  text-align: center;
   font-size: 0.7rem;
   color: rgba(255, 255, 255, 0.45);
-  flex-shrink: 0;
   letter-spacing: 0.02em;
 }
 
