@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tell Boulder Home Investments what you buy. Direct wholesale deals — no daisy chains.">
+  <title>Wholesale Deals | Boulder Home Investments</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="wizard-page">
+
+  <div class="page">
+    <main class="wizard" aria-label="Buyer intake form">
+      <header class="wizard__header">
+        <img src="assets/logo.png" alt="Boulder Home Investments" class="wizard__logo">
+      </header>
+
+      <div class="wizard__card-wrap">
+        <div class="wizard__glow" aria-hidden="true"></div>
+        <div class="wizard__card">
+        <div class="wizard__top" id="wizard-top">
+          <span class="wizard__step-label" id="step-label">Step 1 of 6</span>
+          <div class="wizard__progress" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1" id="progress-bar">
+            <div class="wizard__progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+
+        <form id="buyer-form" class="wizard__form" novalidate>
+          <div class="wizard__viewport">
+            <div class="wizard__track" id="wizard-track">
+
+              <!-- Step 1: Welcome -->
+              <section class="step step--welcome" data-step="1">
+                <div class="welcome">
+                  <p class="welcome__eyebrow">Boulder Home Investments</p>
+                  <h2 class="welcome__title">Get access to exclusive deals</h2>
+                  <p class="welcome__tagline">Direct · No daisy chains</p>
+                </div>
+              </section>
+
+              <!-- Step 2 -->
+              <section class="step" data-step="2" data-checkbox-group="property_types">
+                <h2 class="step__question">What type of properties are you interested in buying?</h2>
+                <p class="step__hint">Select all that apply</p>
+                <div class="option-list">
+                  <label class="option"><input type="checkbox" name="property_types" value="Single-Family Homes"><span>Single-Family Homes</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Multi-Family Properties"><span>Multi-Family Properties</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Duplexes"><span>Duplexes</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Condos / Townhomes"><span>Condos / Townhomes</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Fixer-Uppers"><span>Fixer-Uppers</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Move-In Ready Properties"><span>Move-In Ready Properties</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Rental Properties"><span>Rental Properties</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Commercial Properties"><span>Commercial Properties</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Land / Lots"><span>Land / Lots</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Mobile Homes / Manufactured Homes"><span>Mobile Homes / Manufactured Homes</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Luxury Properties"><span>Luxury Properties</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Distressed Properties"><span>Distressed Properties</span></label>
+                  <label class="option"><input type="checkbox" name="property_types" value="Foreclosures / Pre-Foreclosures"><span>Foreclosures / Pre-Foreclosures</span></label>
+                  <label class="option option--accent"><input type="checkbox" name="property_types" value="Any Good Deal / Open to All Opportunities" data-any-option><span>Any Good Deal / Open to All Opportunities</span></label>
+                </div>
+                <p class="step__error" data-error-for="property_types" hidden></p>
+              </section>
+
+              <!-- Step 3 -->
+              <section class="step" data-step="3">
+                <h2 class="step__question">Preferred property location</h2>
+                <p class="step__hint">Where are you looking to buy?</p>
+                <div class="step__fields">
+                  <div class="field">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required autocomplete="address-level2" placeholder="City">
+                  </div>
+                  <div class="field">
+                    <label for="zip">Zip code</label>
+                    <input type="text" id="zip" name="zip" required inputmode="numeric" maxlength="5" placeholder="Zip code" autocomplete="postal-code">
+                  </div>
+                </div>
+                <p class="step__error" data-error-for="location" hidden></p>
+              </section>
+
+              <!-- Step 4 -->
+              <section class="step" data-step="4">
+                <h2 class="step__question">What is your ideal price range?</h2>
+                <div class="step__fields">
+                  <div class="field">
+                    <label for="min_price">Minimum</label>
+                    <input type="text" id="min_price" name="min_price" required inputmode="numeric" class="price-input" placeholder="Minimum" autocomplete="off">
+                  </div>
+                  <div class="field">
+                    <label for="max_price">Maximum</label>
+                    <input type="text" id="max_price" name="max_price" required inputmode="numeric" class="price-input" placeholder="Maximum" autocomplete="off">
+                  </div>
+                </div>
+                <p class="step__error" data-error-for="price_range" hidden></p>
+              </section>
+
+              <!-- Step 5 -->
+              <section class="step" data-step="5" data-checkbox-group="conditions">
+                <h2 class="step__question">What property conditions are you open to?</h2>
+                <p class="step__hint">Select all that apply</p>
+                <div class="option-list">
+                  <label class="option"><input type="checkbox" name="conditions" value="Disrepair"><span>Disrepair</span></label>
+                  <label class="option"><input type="checkbox" name="conditions" value="Poor"><span>Poor</span></label>
+                  <label class="option"><input type="checkbox" name="conditions" value="Average"><span>Average</span></label>
+                  <label class="option"><input type="checkbox" name="conditions" value="Good"><span>Good</span></label>
+                  <label class="option"><input type="checkbox" name="conditions" value="Excellent"><span>Excellent</span></label>
+                  <label class="option"><input type="checkbox" name="conditions" value="Luxury"><span>Luxury</span></label>
+                </div>
+                <p class="step__error" data-error-for="conditions" hidden></p>
+              </section>
+
+              <!-- Step 6 -->
+              <section class="step" data-step="6" data-checkbox-group="contact_preference">
+                <h2 class="step__question">How should we send you deals?</h2>
+                <p class="step__hint">Select all that apply</p>
+                <div class="option-list">
+                  <label class="option"><input type="checkbox" name="contact_preference" value="Phone call"><span>Phone call</span></label>
+                  <label class="option"><input type="checkbox" name="contact_preference" value="Text message"><span>Text message</span></label>
+                  <label class="option"><input type="checkbox" name="contact_preference" value="Email"><span>Email</span></label>
+                  <label class="option"><input type="checkbox" name="contact_preference" value="No Preference"><span>No Preference</span></label>
+                </div>
+                <p class="step__error" data-error-for="contact_preference" hidden></p>
+              </section>
+
+              <!-- Step 7 -->
+              <section class="step" data-step="7">
+                <h2 class="step__question">How can we reach you?</h2>
+                <p class="step__hint">We'll only contact you about matching deals</p>
+                <div class="step__fields step__fields--stack">
+                  <div class="field">
+                    <label for="name">Full name</label>
+                    <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name">
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+                  </div>
+                  <div class="field">
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(555) 555-5555">
+                  </div>
+                </div>
+                <p class="step__error" data-error-for="contact" hidden></p>
+              </section>
+
+            </div>
+          </div>
+
+          <p id="form-status" class="form-status" hidden role="alert"></p>
+
+          <div class="wizard__actions">
+            <button type="button" class="btn btn--ghost" id="btn-back" hidden>Back</button>
+            <button type="button" class="btn btn--primary" id="btn-next">Continue</button>
+            <button type="submit" class="btn btn--primary" id="btn-submit" hidden>Submit</button>
+          </div>
+        </form>
+        </div>
+      </div>
+
+      <p class="wizard__legal">&copy; <span id="year"></span> Boulder Home Investments</p>
+    </main>
+  </div>
+
+  <script src="js/form-config.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
